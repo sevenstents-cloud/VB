@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resultados do Exame / Emissão de ASO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                        "success": "#1E8449",
+                        "danger": "#C70039",
+                        "warning": "#F39C12",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2530",
+                        "text-light-primary": "#0e141b",
+                        "text-dark-primary": "#f6f7f8",
+                        "text-light-secondary": "#4e7397",
+                        "text-dark-secondary": "#a0b3c6",
+                        "border-light": "#e7edf3",
+                        "border-dark": "#2c3e50"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light-primary dark:text-text-dark-primary">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="flex flex-col w-64 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark">
+<div class="flex h-full flex-col justify-between p-4">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Profile picture of Dr. Carlos Andrade" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZH8fpA0hcd5FNtH5IBz1dtsnf8SCHFMBICkGL50fa35NC3K5AcDjiNJp2NncSy_U6en89ZUY6dCDaGB58Z1yYZXQArOdf64UFhXsqXtL5KwhDGeNMSKW_Vy1yEhaY15C7aJa6QH40Dd1QtojHkm6dMdsdaS99WqwP8Q5YX0efY1NYIuKzdzypwjl6c1dkMA__0LE0h90nd9iKbTTGE1RQaWggdD4B3YWi5SksiTIaJ2DYEkWii3lFKfPUS8Bl2ClGloT1gjYgu2U");'></div>
+<div class="flex flex-col">
+<h1 class="text-base font-medium leading-normal text-text-light-primary dark:text-text-dark-primary">Dr. Carlos Andrade</h1>
+<p class="text-sm font-normal leading-normal text-text-light-secondary dark:text-text-dark-secondary">Médico do Trabalho</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-text-light-primary dark:text-text-dark-primary">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-text-light-primary dark:text-text-dark-primary">group</span>
+<p class="text-sm font-medium leading-normal">Funcionários</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined fill">health_and_safety</span>
+<p class="text-sm font-bold leading-normal">Exames</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Novo Atendimento</span>
+</button>
+<div class="flex flex-col gap-1 border-t border-border-light dark:border-border-dark pt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-text-light-primary dark:text-text-dark-primary">settings</span>
+<p class="text-sm font-medium leading-normal">Configurações</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-text-light-primary dark:text-text-dark-primary">logout</span>
+<p class="text-sm font-medium leading-normal">Sair</p>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-6 lg:p-8">
+<div class="max-w-7xl mx-auto">
+<!-- Breadcrumbs & Page Heading -->
+<header class="mb-6">
+<div class="flex flex-wrap gap-2 text-sm mb-4">
+<a class="text-text-light-secondary dark:text-text-dark-secondary hover:text-primary" href="#">Exames</a>
+<span class="text-text-light-secondary dark:text-text-dark-secondary">/</span>
+<a class="text-text-light-secondary dark:text-text-dark-secondary hover:text-primary" href="#">Atendimentos Pendentes</a>
+<span class="text-text-light-secondary dark:text-text-dark-secondary">/</span>
+<span class="font-medium text-text-light-primary dark:text-text-dark-primary">Joana Silva</span>
+</div>
+<div class="flex flex-wrap justify-between items-start gap-4">
+<div class="flex flex-col gap-1">
+<h1 class="text-3xl font-black leading-tight tracking-[-0.033em] text-text-light-primary dark:text-text-dark-primary">Resultados do Exame / Emissão de ASO</h1>
+<p class="text-base font-normal leading-normal text-text-light-secondary dark:text-text-dark-secondary">Joana Silva - CPF: 123.456.789-00</p>
+</div>
+<a class="flex items-center justify-center h-10 px-4 rounded-lg bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark text-text-light-primary dark:text-text-dark-primary text-sm font-bold hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined mr-2">arrow_back</span>
+                            Voltar
+                        </a>
+</div>
+</header>
+<!-- Two Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+<!-- Left Column: Patient Summary -->
+<div class="lg:col-span-1">
+<div class="p-6 bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark">
+<div class="flex flex-col items-stretch justify-start">
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1">
+<div class="flex justify-between items-center">
+<p class="text-lg font-bold leading-tight tracking-[-0.015em] text-text-light-primary dark:text-text-dark-primary">Resumo do Atendimento</p>
+<span class="inline-flex items-center rounded-full bg-warning/10 px-2.5 py-0.5 text-xs font-semibold text-warning">Pendente</span>
+</div>
+<p class="text-base font-normal leading-normal text-text-light-secondary dark:text-text-dark-secondary mb-4">Informações do funcionário e do exame.</p>
+<div class="space-y-4 border-t border-border-light dark:border-border-dark pt-4">
+<div>
+<p class="text-xs text-text-light-secondary dark:text-text-dark-secondary">Nome Completo</p>
+<p class="font-medium">Joana Silva</p>
+</div>
+<div>
+<p class="text-xs text-text-light-secondary dark:text-text-dark-secondary">Cargo</p>
+<p class="font-medium">Analista de Sistemas</p>
+</div>
+<div>
+<p class="text-xs text-text-light-secondary dark:text-text-dark-secondary">Empresa</p>
+<p class="font-medium">Tech Solutions Ltda.</p>
+</div>
+<div>
+<p class="text-xs text-text-light-secondary dark:text-text-dark-secondary">Tipo de Exame</p>
+<p class="font-medium">Periódico</p>
+</div>
+<div>
+<p class="text-xs text-text-light-secondary dark:text-text-dark-secondary">Data da Consulta</p>
+<p class="font-medium">24 de Julho, 2024</p>
+</div>
+<div>
+<p class="text-xs text-text-light-secondary dark:text-text-dark-secondary">Médico Responsável</p>
+<p class="font-medium">Dr. Carlos Andrade</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Tabbed Interface -->
+<div class="lg:col-span-2">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark">
+<!-- Tab Navigation -->
+<div class="border-b border-border-light dark:border-border-dark px-6">
+<nav aria-label="Tabs" class="-mb-px flex space-x-6">
+<a aria-current="page" class="shrink-0 border-b-2 border-primary px-1 py-4 text-sm font-medium text-primary" href="#">Dados Clínicos</a>
+<a class="shrink-0 border-b-2 border-transparent px-1 py-4 text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary hover:border-border-light dark:hover:border-border-dark hover:text-primary" href="#">Exames Complementares</a>
+<a class="shrink-0 border-b-2 border-transparent px-1 py-4 text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary hover:border-border-light dark:hover:border-border-dark hover:text-primary" href="#">Riscos Ocupacionais</a>
+<a class="shrink-0 border-b-2 border-transparent px-1 py-4 text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary hover:border-border-light dark:hover:border-border-dark hover:text-primary" href="#">Conclusão e ASO</a>
+</nav>
+</div>
+<!-- Tab Content -->
+<div class="p-6">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary mb-1" for="blood-pressure">Pressão Arterial</label>
+<input class="block w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary text-sm" id="blood-pressure" name="blood-pressure" placeholder="Ex: 120/80 mmHg" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary mb-1" for="heart-rate">Frequência Cardíaca</label>
+<input class="block w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary text-sm" id="heart-rate" name="heart-rate" placeholder="Ex: 75 bpm" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary mb-1" for="medical-history">Histórico Médico Pregresso</label>
+<textarea class="block w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary text-sm" id="medical-history" name="medical-history" placeholder="Descreva aqui o histórico médico, alergias, cirurgias, etc." rows="4"></textarea>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary mb-1" for="physical-exam">Exame Físico</label>
+<textarea class="block w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary text-sm" id="physical-exam" name="physical-exam" placeholder="Anote as observações do exame físico." rows="4"></textarea>
+</div>
+<fieldset>
+<legend class="text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary mb-2">Conclusão do Exame Clínico</legend>
+<div class="flex items-center gap-x-4">
+<div class="flex items-center">
+<input class="h-4 w-4 border-gray-300 text-primary focus:ring-primary" id="apto" name="aso-result" type="radio"/>
+<label class="ml-2 block text-sm font-medium" for="apto">Apto</label>
+</div>
+<div class="flex items-center">
+<input class="h-4 w-4 border-gray-300 text-primary focus:ring-primary" id="inapto" name="aso-result" type="radio"/>
+<label class="ml-2 block text-sm font-medium" for="inapto">Inapto</label>
+</div>
+<div class="flex items-center">
+<input class="h-4 w-4 border-gray-300 text-primary focus:ring-primary" id="apto-restricao" name="aso-result" type="radio"/>
+<label class="ml-2 block text-sm font-medium" for="apto-restricao">Apto com restrições</label>
+</div>
+</div>
+</fieldset>
+</form>
+</div>
+<!-- Button Group -->
+<div class="flex flex-1 gap-3 flex-wrap px-6 py-4 justify-end border-t border-border-light dark:border-border-dark">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 dark:bg-primary/30 text-primary text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/30 dark:hover:bg-primary/40 transition-colors">
+<span class="truncate">Salvar Alterações</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Gerar ASO em PDF</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

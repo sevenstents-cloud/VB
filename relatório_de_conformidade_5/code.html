@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Relatório de Conformidade de Normas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#005A9C",
+                        "background-light": "#f5f5f5",
+                        "background-dark": "#111921",
+                        "status-green": "#2E7D32",
+                        "status-yellow": "#FFC107",
+                        "status-red": "#D32F2F"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL'0,
+            'wght'400,
+            'GRAD'0,
+            'opsz'24
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#0e141b] dark:text-slate-200">
+<div class="relative flex min-h-screen w-full">
+<aside class="flex h-screen w-64 flex-col gap-8 border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 sticky top-0">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Logotipo da empresa Segurança Pro" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA49MP-3NhGmYwiEAnMK9RikJnd2EB63IsYaLaj4DvsU8-2U4Q0XXfHEza71U86D4udRPOVj0FkZvC9l4oqbdfBzQMuvUIo1-q1yEYg99NZu-m8Dx8sy4GJyhCKSV_a54ioT_KshugoLV5munSTKd-tF5hnAv_lkOANfq0bfcUF8MdDc_bA04J6LmJE0uvlyFQa4pd4oRGr0soayPYmMwPmV53BFIUm-7vk8vRdFnPaRd4oRZOH4hUP0nhiwBecMfHZJ9OjpOcPZ08');"></div>
+<div class="flex flex-col">
+<h1 class="text-base font-bold leading-normal text-gray-900 dark:text-white">Segurança Pro</h1>
+<p class="text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">Sistemas de Segurança</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg bg-primary/10 dark:bg-primary/20 px-3 py-2 text-primary dark:text-white" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lab_profile</span>
+<p class="text-sm font-bold leading-normal">Relatórios</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<p class="text-sm font-medium leading-normal">Exames</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium leading-normal">Funcionários</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Configurações</p>
+</a>
+</nav>
+<div class="mt-auto">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium leading-normal">Sair</p>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-8">
+<div class="mx-auto max-w-7xl">
+<header class="mb-6">
+<p class="text-4xl font-black leading-tight tracking-[-0.033em] text-gray-900 dark:text-white">Relatório de Conformidade</p>
+<p class="mt-1 text-gray-500 dark:text-gray-400">Acompanhe o status de atendimento das normas de segurança do trabalho.</p>
+</header>
+<div class="mb-8 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6">
+<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6">
+<div class="flex flex-col gap-1.5 md:col-span-2 lg:col-span-4 xl:col-span-2">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="periodo">Período</label>
+<div class="flex items-center gap-2">
+<input class="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm dark:text-white" id="periodo-inicio" type="date"/>
+<span class="text-gray-500 dark:text-gray-400">até</span>
+<input class="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm dark:text-white" id="periodo-fim" type="date"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="departamento">Área/Departamento</label>
+<select class="rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm dark:text-white" id="departamento">
+<option>Todos</option>
+<option>Produção</option>
+<option>Logística</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="funcao">Função</label>
+<select class="rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm dark:text-white" id="funcao">
+<option>Todas</option>
+<option>Operador de Máquinas</option>
+<option>Soldador</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="tipo-risco">Tipo de Risco</label>
+<select class="rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm dark:text-white" id="tipo-risco">
+<option>Todos</option>
+<option>Físico</option>
+<option>Químico</option>
+<option>Ergonômico</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="status-norma">Status da Norma</label>
+<select class="rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm dark:text-white" id="status-norma">
+<option>Todos</option>
+<option>Conforme</option>
+<option>Não Conforme</option>
+<option>Em Análise</option>
+</select>
+</div>
+</div>
+<div class="mt-4 flex justify-end gap-3">
+<button class="flex h-10 max-w-[480px] min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-gray-200 dark:bg-gray-600 px-4 text-sm font-bold leading-normal tracking-[0.015em] text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-500">
+<span class="truncate">Limpar Filtros</span>
+</button>
+<button class="flex h-10 max-w-[480px] min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-white hover:bg-primary/90">
+<span class="truncate">Aplicar Filtros</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+<div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 flex flex-col justify-center text-center">
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Status Geral de Conformidade</p>
+<p class="text-5xl font-extrabold text-status-green">92%</p>
+</div>
+<div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 flex flex-col justify-center text-center">
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Não Conformidades</p>
+<p class="text-5xl font-extrabold text-status-red">8</p>
+</div>
+<div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 flex flex-col justify-center text-center">
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Normas em Análise</p>
+<p class="text-5xl font-extrabold text-status-yellow">3</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+<div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Conformidade por Departamento</h3>
+<canvas id="departmentChart"></canvas>
+</div>
+<div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Não Conformidades por Risco</h3>
+<canvas id="riskChart"></canvas>
+</div>
+</div>
+<div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 mb-8">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Evolução da Conformidade (Últimos 6 meses)</h3>
+<canvas id="evolutionChart"></canvas>
+</div>
+<div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+<div class="flex flex-wrap justify-between items-center gap-4 p-4 border-b border-gray-200 dark:border-gray-700">
+<h2 class="text-2xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white">Relatório Detalhado</h2>
+<div class="flex items-center gap-2">
+<button class="flex h-10 max-w-[480px] min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-700 px-4 text-sm font-bold leading-normal tracking-[0.015em] text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600">
+<span class="material-symbols-outlined text-lg">picture_as_pdf</span>
+<span class="truncate">Exportar PDF</span>
+</button>
+<button class="flex h-10 max-w-[480px] min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-700 px-4 text-sm font-bold leading-normal tracking-[0.015em] text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600">
+<span class="material-symbols-outlined text-lg">description</span>
+<span class="truncate">Exportar Excel</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead class="bg-gray-50 dark:bg-gray-700/50 text-xs uppercase text-gray-700 dark:text-gray-400">
+<tr>
+<th class="px-6 py-3" scope="col">Função</th>
+<th class="px-6 py-3" scope="col">Risco</th>
+<th class="px-6 py-3" scope="col">Norma Vinculada</th>
+<th class="px-6 py-3" scope="col">Status de Atendimento</th>
+<th class="px-6 py-3" scope="col">Ações</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Operador de Máquinas</td>
+<td class="px-6 py-4">Ruído</td>
+<td class="px-6 py-4">NR-15</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-status-green/10 px-3 py-1 text-xs font-medium text-status-green">
+<span class="w-2 h-2 mr-2 rounded-full bg-status-green"></span>
+                                            Conforme
+                                        </span>
+</td>
+<td class="px-6 py-4"><a class="font-medium text-primary hover:underline" href="#">Ver Detalhes</a></td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Eletricista</td>
+<td class="px-6 py-4">Choque Elétrico</td>
+<td class="px-6 py-4">NR-10</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-status-green/10 px-3 py-1 text-xs font-medium text-status-green">
+<span class="w-2 h-2 mr-2 rounded-full bg-status-green"></span>
+                                            Conforme
+                                        </span>
+</td>
+<td class="px-6 py-4"><a class="font-medium text-primary hover:underline" href="#">Ver Detalhes</a></td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Soldador</td>
+<td class="px-6 py-4">Fumos Metálicos</td>
+<td class="px-6 py-4">NR-9</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-status-yellow/10 px-3 py-1 text-xs font-medium text-status-yellow">
+<span class="w-2 h-2 mr-2 rounded-full bg-status-yellow"></span>
+                                            Em Análise
+                                        </span>
+</td>
+<td class="px-6 py-4"><a class="font-medium text-primary hover:underline" href="#">Ver Detalhes</a></td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Almoxarife</td>
+<td class="px-6 py-4">Ergonômico</td>
+<td class="px-6 py-4">NR-17</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-status-red/10 px-3 py-1 text-xs font-medium text-status-red">
+<span class="w-2 h-2 mr-2 rounded-full bg-status-red"></span>
+                                            Não Conforme
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<a class="font-medium text-primary hover:underline" href="#">Ver Detalhes</a>
+<button class="flex items-center gap-1 text-status-red hover:text-red-700 dark:hover:text-red-400" title="Gerar Alerta de Não Conformidade">
+<span class="material-symbols-outlined text-base">notification_add</span>
+<span class="text-xs font-medium">Gerar Alerta</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="bg-white dark:bg-gray-800">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Trabalhador em Altura</td>
+<td class="px-6 py-4">Queda</td>
+<td class="px-6 py-4">NR-35</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-status-green/10 px-3 py-1 text-xs font-medium text-status-green">
+<span class="w-2 h-2 mr-2 rounded-full bg-status-green"></span>
+                                            Conforme
+                                        </span>
+</td>
+<td class="px-6 py-4"><a class="font-medium text-primary hover:underline" href="#">Ver Detalhes</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    const textColor = isDarkMode ? 'rgb(226, 232, 240)' : 'rgb(55, 65, 81)';
+    const gridColor = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+    const departmentChartCtx = document.getElementById('departmentChart').getContext('2d');
+    new Chart(departmentChartCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Produção', 'Logística', 'Manutenção', 'Administrativo'],
+            datasets: [{
+                label: '% Conformidade',
+                data: [95, 88, 98, 91],
+                backgroundColor: 'rgba(0, 90, 156, 0.6)',
+                borderColor: 'rgba(0, 90, 156, 1)',
+                borderWidth: 1,
+                borderRadius: 4,
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { 
+                    beginAtZero: true, 
+                    max: 100,
+                    grid: { color: gridColor },
+                    ticks: { color: textColor }
+                },
+                y: { 
+                    grid: { display: false },
+                    ticks: { color: textColor }
+                }
+            }
+        }
+    });
+    const riskChartCtx = document.getElementById('riskChart').getContext('2d');
+    new Chart(riskChartCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Ergonômico', 'Físico', 'Químico', 'Acidentes'],
+            datasets: [{
+                data: [5, 2, 1, 0],
+                backgroundColor: ['#D32F2F', '#FFC107', '#005A9C', '#2E7D32'],
+                borderColor: isDarkMode ? '#111921' : '#ffffff',
+                borderWidth: 2,
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: { color: textColor }
+                }
+            }
+        }
+    });
+    const evolutionChartCtx = document.getElementById('evolutionChart').getContext('2d');
+    new Chart(evolutionChartCtx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+            datasets: [{
+                label: 'Conformidade Geral (%)',
+                data: [85, 87, 86, 90, 91, 92],
+                fill: true,
+                backgroundColor: 'rgba(46, 125, 50, 0.2)',
+                borderColor: '#2E7D32',
+                tension: 0.3,
+                pointBackgroundColor: '#2E7D32',
+                pointRadius: 4,
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { 
+                    grid: { display: false },
+                    ticks: { color: textColor }
+                },
+                y: { 
+                    beginAtZero: false,
+                    grid: { color: gridColor },
+                    ticks: { color: textColor }
+                }
+            }
+        }
+    });
+</script>
+</body></html>

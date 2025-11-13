@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - Sistema de Segurança do Trabalho</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#197fe6",
+              "background-light": "#f6f7f8",
+              "background-dark": "#111921",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center items-center p-4 lg:p-8">
+<div class="layout-content-container flex flex-col w-full max-w-6xl flex-1">
+<div class="w-full grid grid-cols-1 md:grid-cols-2 shadow-xl rounded-xl overflow-hidden bg-white dark:bg-gray-900/50">
+<div class="hidden md:flex flex-col p-8 lg:p-12 bg-gray-100 dark:bg-background-dark relative justify-between">
+<div>
+<div class="flex items-center gap-3">
+<div class="bg-primary p-2 rounded-lg">
+<span class="material-symbols-outlined text-white text-3xl">health_and_safety</span>
+</div>
+<h2 class="text-xl font-bold text-gray-800 dark:text-white">Segurança Total</h2>
+</div>
+</div>
+<div class="w-full h-full flex items-center justify-center">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover aspect-square rounded-none" data-alt="An abstract graphic representing safety compliance and work-related health, featuring green and blue shapes resembling a shield and a heart rate line." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8DcVbD_57L6PYXHQnUkxb_K5uKdBVSShr95k3u2xHWfhcWaZZCNoI27td8VsFcHJZV9ccIJ1i3IZ2w61FwGONol2hwN72tydskJUXsmtz7cr24BQD2_79T-jRO4nD2BDB9NGNdk_Dxhvqv92H3giquc9KC-joGs_jFvTbsVDL3IdwDfpEvDXAnPGhfq_opQ3sUpepDlT-KgY20RSMHOr_V14luhaAATq1WESwIBE1Q4VUG6FoEbtcMB7btEnZkABswGE9kyjxQKM"); background-size: contain;'></div>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 text-center">© 2024 Segurança Total. Todos os direitos reservados.</p>
+</div>
+<div class="flex flex-col justify-center p-8 lg:p-16">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-2 text-center md:text-left">
+<h1 class="text-[#0e141b] dark:text-white tracking-tight text-[32px] font-bold leading-tight">Acesse sua conta</h1>
+<p class="text-gray-600 dark:text-gray-300">Bem-vindo de volta! Insira seus dados para continuar.</p>
+</div>
+<div class="flex flex-col w-full gap-4">
+<label class="flex flex-col w-full">
+<p class="text-[#0e141b] dark:text-gray-200 text-base font-medium leading-normal pb-2">Usuário</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e141b] focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#d0dbe7] bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder:text-gray-400 h-14 placeholder:text-[#4e7397] p-[15px] rounded-r-none border-r-0 pr-2 text-base font-normal leading-normal focus:border-primary dark:focus:border-primary" placeholder="Digite seu usuário" value=""/>
+<div class="text-[#4e7397] dark:text-gray-400 flex border border-[#d0dbe7] bg-white dark:bg-gray-800 dark:border-gray-700 items-center justify-center px-4 rounded-r-lg border-l-0">
+<span class="material-symbols-outlined">person</span>
+</div>
+</div>
+</label>
+<label class="flex flex-col w-full">
+<p class="text-[#0e141b] dark:text-gray-200 text-base font-medium leading-normal pb-2">Senha</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e141b] focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#d0dbe7] bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder:text-gray-400 h-14 placeholder:text-[#4e7397] p-[15px] rounded-r-none border-r-0 pr-2 text-base font-normal leading-normal focus:border-primary dark:focus:border-primary" placeholder="Digite sua senha" type="password" value=""/>
+<div class="text-[#4e7397] dark:text-gray-400 flex border border-[#d0dbe7] bg-white dark:bg-gray-800 dark:border-gray-700 items-center justify-center px-4 rounded-r-lg border-l-0">
+<span class="material-symbols-outlined">lock</span>
+</div>
+</div>
+</label>
+</div>
+<div class="flex items-center gap-4 justify-between flex-wrap">
+<div class="flex items-center gap-2">
+<input class="h-5 w-5 rounded border-[#d0dbe7] dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-2 focus:ring-offset-0 focus:ring-primary/50" id="remember-me" type="checkbox"/>
+<label class="text-[#0e141b] dark:text-gray-200 text-base font-normal leading-normal flex-1 truncate cursor-pointer" for="remember-me">Lembrar-me</label>
+</div>
+<div class="shrink-0">
+<a class="text-base font-medium text-primary hover:underline" href="#">Esqueci minha senha</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<button class="flex items-center justify-center text-center font-bold text-base h-14 px-6 rounded-lg w-full bg-primary text-white hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark transition-colors">Entrar</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

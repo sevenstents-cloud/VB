@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gerenciamento de Requisitos Legais - SegurançaPro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                        "corporate-blue": "#005A9C",
+                        "status-green": "#2E8540",
+                        "status-red": "#D32F2F",
+                        "status-yellow": "#FBC02D",
+                        "neutral-light": "#F4F6F8",
+                        "neutral-dark": "#333333",
+                        "neutral-border": "#E0E0E0",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-neutral-border dark:border-neutral-dark/20 px-6 lg:px-10 py-3 bg-white dark:bg-background-dark/50 sticky top-0 z-10">
+<div class="flex items-center gap-4 text-neutral-dark dark:text-neutral-light">
+<div class="text-corporate-blue">
+<span class="material-symbols-outlined text-3xl">security</span>
+</div>
+<h2 class="text-neutral-dark dark:text-neutral-light text-lg font-bold leading-tight tracking-[-0.015em]">SegurançaPro</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-center gap-9">
+<a class="text-corporate-blue text-sm font-bold leading-normal border-b-2 border-corporate-blue pb-1" href="#">Dashboard</a>
+<a class="text-neutral-dark dark:text-neutral-light/80 text-sm font-medium leading-normal hover:text-corporate-blue" href="#">Empresas</a>
+<a class="text-neutral-dark dark:text-neutral-light/80 text-sm font-medium leading-normal hover:text-corporate-blue" href="#">Funcionários</a>
+<a class="text-neutral-dark dark:text-neutral-light/80 text-sm font-medium leading-normal hover:text-corporate-blue" href="#">Exames</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-neutral-light dark:bg-neutral-dark/40 text-neutral-dark dark:text-neutral-light/80 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-neutral-light dark:bg-neutral-dark/40 text-neutral-dark dark:text-neutral-light/80 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0">
+<span class="material-symbols-outlined text-xl">settings</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Avatar do usuário" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCOPpsK4Eu8zJ8Ohxmkb-t2dvlDqEyOGj_QRkMI93p-jsRb2MWY1P9yMnMEHShj0JxoC6ZaIj47K2YLeqOhHXILz0tER9JFXCPmaRl9Dt4QOmKFuLZZe9jDCCa46CTv-5BvsOoeTs6R7OoDZKhogYgNm8CS3OP4N4r6GT-pQu-bLlfElsqu_dWUl0ojzMIu0UqMEZwRjTcliaRKMQ2U2acMjlP_hKNl7jf-AyInVmsNHo_qkosUgxnDlDHynlTVmnDcA0SV09vTd4s");'></div>
+</div>
+</header>
+<main class="flex-1 px-4 sm:px-6 lg:px-8 py-8">
+<div class="layout-content-container flex flex-col max-w-7xl mx-auto flex-1 gap-6">
+<div class="flex flex-wrap justify-between items-center gap-4">
+<div class="flex flex-col gap-2">
+<p class="text-neutral-dark dark:text-neutral-light text-3xl font-black leading-tight tracking-[-0.033em]">Gerenciamento de Requisitos Legais</p>
+<p class="text-neutral-dark/60 dark:text-neutral-light/60 text-base font-normal leading-normal">Adicione, edite e consulte as normas regulamentadoras e leis de segurança do trabalho.</p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-corporate-blue text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2 shadow-sm hover:bg-corporate-blue/90 transition-colors">
+<span class="material-symbols-outlined text-lg">add</span>
+<span class="truncate">Adicionar Novo Requisito</span>
+</button>
+</div>
+<div class="bg-white dark:bg-background-dark/50 p-4 rounded-xl border border-neutral-border dark:border-neutral-dark/20 shadow-sm flex flex-col gap-4">
+<div class="px-1 py-1">
+<label class="flex flex-col min-w-40 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-12">
+<div class="text-neutral-dark/50 dark:text-neutral-light/50 flex bg-neutral-light dark:bg-neutral-dark/40 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-neutral-dark dark:text-neutral-light focus:outline-0 focus:ring-2 focus:ring-corporate-blue/50 border-none bg-neutral-light dark:bg-neutral-dark/40 h-full placeholder:text-neutral-dark/50 dark:placeholder:text-neutral-light/50 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Pesquisar por nome da norma, artigo, palavra-chave..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex gap-3 px-1 py-1 overflow-x-auto">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-neutral-light dark:bg-neutral-dark/40 pl-4 pr-3 text-neutral-dark dark:text-neutral-light/80 hover:bg-neutral-border dark:hover:bg-neutral-dark/60 transition-colors">
+<p class="text-sm font-medium leading-normal">Tipo: NR</p>
+<span class="material-symbols-outlined text-xl">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-neutral-light dark:bg-neutral-dark/40 pl-4 pr-3 text-neutral-dark dark:text-neutral-light/80 hover:bg-neutral-border dark:hover:bg-neutral-dark/60 transition-colors">
+<p class="text-sm font-medium leading-normal">Status: Ativo</p>
+<span class="material-symbols-outlined text-xl">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-neutral-light dark:bg-neutral-dark/40 pl-4 pr-3 text-neutral-dark dark:text-neutral-light/80 hover:bg-neutral-border dark:hover:bg-neutral-dark/60 transition-colors">
+<p class="text-sm font-medium leading-normal">Categoria: Todas</p>
+<span class="material-symbols-outlined text-xl">expand_more</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<div class="inline-block min-w-full align-middle">
+<div class="overflow-hidden rounded-xl border border-neutral-border dark:border-neutral-dark/20 bg-white dark:bg-background-dark/50 shadow-sm">
+<table class="min-w-full divide-y divide-neutral-border dark:divide-neutral-dark/20">
+<thead class="bg-neutral-light/50 dark:bg-neutral-dark/30">
+<tr>
+<th class="px-6 py-4 text-left text-xs font-bold text-neutral-dark/80 dark:text-neutral-light/80 uppercase tracking-wider" scope="col">Nome/Código</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-neutral-dark/80 dark:text-neutral-light/80 uppercase tracking-wider" scope="col">Descrição</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-neutral-dark/80 dark:text-neutral-light/80 uppercase tracking-wider" scope="col">Tipo</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-neutral-dark/80 dark:text-neutral-light/80 uppercase tracking-wider" scope="col">Status</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-neutral-dark/80 dark:text-neutral-light/80 uppercase tracking-wider" scope="col">Atualização</th>
+<th class="px-6 py-4 text-right text-xs font-bold text-neutral-dark/80 dark:text-neutral-light/80 uppercase tracking-wider" scope="col">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-neutral-border dark:divide-neutral-dark/20">
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-dark dark:text-neutral-light">NR-01</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-dark/70 dark:text-neutral-light/70">Disposições Gerais e Gerenciamento de Riscos</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-dark/70 dark:text-neutral-light/70">NR</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">
+<span class="inline-flex items-center gap-x-1.5 rounded-md bg-status-green/10 px-2 py-1 text-xs font-medium text-status-green dark:bg-status-green/20 dark:text-status-green/90">
+<svg aria-hidden="true" class="h-1.5 w-1.5 fill-status-green" viewbox="0 0 6 6"><circle cx="3" cy="3" r="3"></circle></svg>
+                                                    Ativo
+                                                </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-dark/70 dark:text-neutral-light/70">15/08/2023</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-md hover:bg-neutral-light dark:hover:bg-neutral-dark/40 text-neutral-dark/60 dark:text-neutral-light/60"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-light dark:hover:bg-neutral-dark/40 text-neutral-dark/60 dark:text-neutral-light/60"><span class="material-symbols-outlined text-xl">visibility</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-light dark:hover:bg-neutral-dark/40 text-neutral-dark/60 dark:text-neutral-light/60"><span class="material-symbols-outlined text-xl">archive</span></button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-dark dark:text-neutral-light">NR-05</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-dark/70 dark:text-neutral-light/70">Comissão Interna de Prevenção de Acidentes - CIPA</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-dark/70 dark:text-neutral-light/70">NR</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">
+<span class="inline-flex items-center gap-x-1.5 rounded-md bg-status-green/10 px-2 py-1 text-xs font-medium text-status-green dark:bg-status-green/20 dark:text-status-green/90">
+<svg aria-hidden="true" class="h-1.5 w-1.5 fill-status-green" viewbox="0 0 6 6"><circle cx="3" cy="3" r="3"></circle></svg>
+                                                    Ativo
+                                                </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-dark/70 dark:text-neutral-light/70">12/07/2023</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-md hover:bg-neutral-light dark:hover:bg-neutral-dark/40 text-neutral-dark/60 dark:text-neutral-light/60"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-light dark:hover:bg-neutral-dark/40 text-neutral-dark/60 dark:text-neutral-light/60"><span class="material-symbols-outlined text-xl">visibility</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-light dark:hover:bg-neutral-dark/40 text-neutral-dark/60 dark:text-neutral-light/60"><span class="material-symbols-outlined text-xl">archive</span></button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-dark dark:text-neutral-light">Lei 6.514</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-dark/70 dark:text-neutral-light/70">Altera o Capítulo V do Título II da CLT...</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-dark/70 dark:text-neutral-light/70">Lei</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">
+<span class="inline-flex items-center gap-x-1.5 rounded-md bg-status-green/10 px-2 py-1 text-xs font-medium text-status-green dark:bg-status-green/20 dark:text-status-green/90">
+<svg aria-hidden="true" class="h-1.5 w-1.5 fill-status-green" viewbox="0 0 6 6"><circle cx="3" cy="3" r="3"></circle></svg>
+                                                    Ativo
+                                                </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-dark/70 dark:text-neutral-light/70">22/12/1977</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-md hover:bg-neutral-light dark:hover:bg-neutral-dark/40 text-neutral-dark/60 dark:text-neutral-light/60"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-light dark:hover:bg-neutral-dark/40 text-neutral-dark/60 dark:text-neutral-light/60"><span class="material-symbols-outlined text-xl">visibility</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-light dark:hover:bg-neutral-dark/40 text-neutral-dark/60 dark:text-neutral-light/60"><span class="material-symbols-outlined text-xl">archive</span></button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-dark dark:text-neutral-light">NR-12</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-dark/70 dark:text-neutral-light/70">Segurança no Trabalho em Máquinas e Equipamentos</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-dark/70 dark:text-neutral-light/70">NR</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">
+<span class="inline-flex items-center gap-x-1.5 rounded-md bg-status-red/10 px-2 py-1 text-xs font-medium text-status-red dark:bg-status-red/20 dark:text-status-red/90">
+<svg aria-hidden="true" class="h-1.5 w-1.5 fill-status-red" viewbox="0 0 6 6"><circle cx="3" cy="3" r="3"></circle></svg>
+                                                    Revogado
+                                                </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-dark/70 dark:text-neutral-light/70">01/01/2022</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-md hover:bg-neutral-light dark:hover:bg-neutral-dark/40 text-neutral-dark/60 dark:text-neutral-light/60"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-light dark:hover:bg-neutral-dark/40 text-neutral-dark/60 dark:text-neutral-light/60"><span class="material-symbols-outlined text-xl">visibility</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-light dark:hover:bg-neutral-dark/40 text-neutral-dark/60 dark:text-neutral-light/60"><span class="material-symbols-outlined text-xl">archive</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-neutral-border dark:border-neutral-dark/20 bg-white dark:bg-background-dark/50 px-4 py-3 sm:px-6 rounded-b-xl">
+<div class="flex flex-1 justify-between sm:hidden">
+<a class="relative inline-flex items-center rounded-md border border-neutral-border dark:border-neutral-dark/40 bg-white dark:bg-neutral-dark/50 px-4 py-2 text-sm font-medium text-neutral-dark/80 dark:text-neutral-light/80 hover:bg-neutral-light dark:hover:bg-neutral-dark/60" href="#">Anterior</a>
+<a class="relative ml-3 inline-flex items-center rounded-md border border-neutral-border dark:border-neutral-dark/40 bg-white dark:bg-neutral-dark/50 px-4 py-2 text-sm font-medium text-neutral-dark/80 dark:text-neutral-light/80 hover:bg-neutral-light dark:hover:bg-neutral-dark/60" href="#">Próximo</a>
+</div>
+<div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+<div>
+<p class="text-sm text-neutral-dark/70 dark:text-neutral-light/70">
+                                    Mostrando <span class="font-medium">1</span> a <span class="font-medium">4</span> de <span class="font-medium">25</span> resultados
+                                </p>
+</div>
+<div>
+<nav aria-label="Pagination" class="isolate inline-flex -space-x-px rounded-md shadow-sm">
+<a class="relative inline-flex items-center rounded-l-md px-2 py-2 text-neutral-dark/60 dark:text-neutral-light/60 ring-1 ring-inset ring-neutral-border dark:ring-neutral-dark/40 hover:bg-neutral-light dark:hover:bg-neutral-dark/50 focus:z-20 focus:outline-offset-0" href="#">
+<span class="material-symbols-outlined text-xl">chevron_left</span>
+</a>
+<a aria-current="page" class="relative z-10 inline-flex items-center bg-corporate-blue/10 px-4 py-2 text-sm font-semibold text-corporate-blue focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-corporate-blue" href="#">1</a>
+<a class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-neutral-dark dark:text-neutral-light ring-1 ring-inset ring-neutral-border dark:ring-neutral-dark/40 hover:bg-neutral-light dark:hover:bg-neutral-dark/50 focus:z-20 focus:outline-offset-0" href="#">2</a>
+<a class="relative hidden items-center px-4 py-2 text-sm font-semibold text-neutral-dark dark:text-neutral-light ring-1 ring-inset ring-neutral-border dark:ring-neutral-dark/40 hover:bg-neutral-light dark:hover:bg-neutral-dark/50 focus:z-20 focus:outline-offset-0 md:inline-flex" href="#">3</a>
+<span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-neutral-dark/70 dark:text-neutral-light/70 ring-1 ring-inset ring-neutral-border dark:ring-neutral-dark/40 focus:outline-offset-0">...</span>
+<a class="relative inline-flex items-center rounded-r-md px-2 py-2 text-neutral-dark/60 dark:text-neutral-light/60 ring-1 ring-inset ring-neutral-border dark:ring-neutral-dark/40 hover:bg-neutral-light dark:hover:bg-neutral-dark/50 focus:z-20 focus:outline-offset-0" href="#">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</a>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

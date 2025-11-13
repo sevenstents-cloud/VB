@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Relatório de Conformidade de Normas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#005A9C",
+            "background-light": "#f5f5f5",
+            "background-dark": "#111921",
+            "status-green": "#2E7D32",
+            "status-yellow": "#FFC107",
+            "status-red": "#D32F2F"
+          },
+          fontFamily: {
+            "display": ["Manrope", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#0e141b] dark:text-slate-200">
+<div class="relative flex min-h-screen w-full">
+<!-- SideNavBar -->
+<aside class="flex h-screen w-64 flex-col gap-8 border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 sticky top-0">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Logotipo da empresa Segurança Pro" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA49MP-3NhGmYwiEAnMK9RikJnd2EB63IsYaLaj4DvsU8-2U4Q0XXfHEza71U86D4udRPOVj0FkZvC9l4oqbdfBzQMuvUIo1-q1yEYg99NZu-m8Dx8sy4GJyhCKSV_a54ioT_KshugoLV5munSTKd-tF5hnAv_lkOANfq0bfcUF8MdDc_bA04J6LmJE0uvlyFQa4pd4oRGr0soayPYmMwPmV53BFIUm-7vk8vRdFnPaRd4oRZOH4hUP0nhiwBecMfHZJ9OjpOcPZ08');"></div>
+<div class="flex flex-col">
+<h1 class="text-base font-bold leading-normal text-gray-900 dark:text-white">Segurança Pro</h1>
+<p class="text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">Sistemas de Segurança</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg bg-primary/10 dark:bg-primary/20 px-3 py-2 text-primary dark:text-white" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lab_profile</span>
+<p class="text-sm font-bold leading-normal">Relatórios</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<p class="text-sm font-medium leading-normal">Exames</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium leading-normal">Funcionários</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Configurações</p>
+</a>
+</nav>
+<div class="mt-auto">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium leading-normal">Sair</p>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8">
+<div class="mx-auto max-w-7xl">
+<!-- PageHeading -->
+<header class="mb-6">
+<p class="text-4xl font-black leading-tight tracking-[-0.033em] text-gray-900 dark:text-white">Relatório de Conformidade de Normas</p>
+<p class="mt-1 text-gray-500 dark:text-gray-400">Consolide informações das normas vinculadas a riscos e funções.</p>
+</header>
+<!-- Filters Section -->
+<div class="mb-8 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6">
+<div class="grid grid-cols-1 gap-6 md:grid-cols-4">
+<!-- Chips -->
+<div class="flex items-center gap-3 md:col-span-3">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-100 dark:bg-gray-700 pl-4 pr-3 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600">
+<p class="text-sm font-medium leading-normal">Área/Setor</p>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-100 dark:bg-gray-700 pl-4 pr-3 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600">
+<p class="text-sm font-medium leading-normal">Função</p>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-100 dark:bg-gray-700 pl-4 pr-3 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600">
+<p class="text-sm font-medium leading-normal">Período</p>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+</div>
+<!-- ButtonGroup -->
+<div class="flex items-center gap-3 md:col-span-1 md:justify-end">
+<button class="flex h-10 max-w-[480px] min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-gray-200 dark:bg-gray-600 px-4 text-sm font-bold leading-normal tracking-[0.015em] text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-500">
+<span class="truncate">Limpar Filtros</span>
+</button>
+<button class="flex h-10 max-w-[480px] min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-white hover:bg-primary/90">
+<span class="truncate">Gerar Relatório</span>
+</button>
+</div>
+</div>
+</div>
+<!-- SectionHeader for Summary -->
+<h2 class="text-2xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white mb-4">Resumo da Conformidade</h2>
+<!-- Summary Cards and Chart -->
+<div class="grid grid-cols-1 gap-6 lg:grid-cols-3 mb-8">
+<!-- KPI Cards -->
+<div class="col-span-1 grid grid-cols-1 gap-6">
+<div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Conformidade Geral</p>
+<p class="text-4xl font-bold text-status-green">92%</p>
+</div>
+<div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Total de Normas Avaliadas</p>
+<p class="text-4xl font-bold text-gray-900 dark:text-white">48</p>
+</div>
+<div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Pontos de Atenção</p>
+<p class="text-4xl font-bold text-status-yellow">4</p>
+</div>
+</div>
+<!-- Chart -->
+<div class="lg:col-span-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 flex flex-col items-center justify-center">
+<h3 class="w-full text-lg font-bold text-gray-900 dark:text-white mb-4">Distribuição de Status de Conformidade</h3>
+<div class="w-full flex justify-center items-center h-full">
+<!-- Placeholder for a chart -->
+<img class="max-w-xs object-contain" data-alt="Gráfico de pizza mostrando a distribuição de status de conformidade: 80% Conforme, 10% Em Andamento, 10% Não Conforme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiSIHpXLzyewAxoC3xkjfb9aAgBsl0ITXqeRYruc0G8IfHwYSUPfLjLpEY5fV2PMWgAK-JkBaTRKQwz2OGXzkSY3OC_iATg5z8v0yvBvVzcx_uignIYbqgeIncWLlo7WEEWQpTav_5cxSTHLNvOjt8FXMgxri_Xzz3VAD0ys4hjw1oy8LTkTABcS3WX0mmhBaP3eCF4Oru-qdh2-wHDlSE4gMN_MJ1lFBSXzINSnOI5dBAIdQSVgexDz8FOdLG7V89TK9sr_CPBpQ"/>
+</div>
+<div class="flex justify-center gap-6 mt-4 w-full text-sm">
+<div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-status-green"></span>Conforme</div>
+<div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-status-yellow"></span>Em Andamento</div>
+<div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-status-red"></span>Não Conforme</div>
+</div>
+</div>
+</div>
+<!-- Detailed Report Table -->
+<div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+<div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700">
+<h2 class="text-2xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white">Relatório Detalhado</h2>
+<button class="flex h-10 max-w-[480px] min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-700 px-4 text-sm font-bold leading-normal tracking-[0.015em] text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600">
+<span class="material-symbols-outlined text-lg">download</span>
+<span class="truncate">Exportar</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead class="bg-gray-50 dark:bg-gray-700/50 text-xs uppercase text-gray-700 dark:text-gray-400">
+<tr>
+<th class="px-6 py-3" scope="col">Função</th>
+<th class="px-6 py-3" scope="col">Risco</th>
+<th class="px-6 py-3" scope="col">Norma Aplicável</th>
+<th class="px-6 py-3" scope="col">Status</th>
+<th class="px-6 py-3" scope="col">Ações</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Operador de Máquinas</td>
+<td class="px-6 py-4">Ruído</td>
+<td class="px-6 py-4">NR-15</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-status-green/10 px-3 py-1 text-xs font-medium text-status-green">
+<span class="w-2 h-2 mr-2 rounded-full bg-status-green"></span>
+                      Conforme
+                    </span>
+</td>
+<td class="px-6 py-4"><a class="font-medium text-primary hover:underline" href="#">Ver Detalhes</a></td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Eletricista</td>
+<td class="px-6 py-4">Choque Elétrico</td>
+<td class="px-6 py-4">NR-10</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-status-green/10 px-3 py-1 text-xs font-medium text-status-green">
+<span class="w-2 h-2 mr-2 rounded-full bg-status-green"></span>
+                      Conforme
+                    </span>
+</td>
+<td class="px-6 py-4"><a class="font-medium text-primary hover:underline" href="#">Ver Detalhes</a></td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Soldador</td>
+<td class="px-6 py-4">Fumos Metálicos</td>
+<td class="px-6 py-4">NR-9</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-status-yellow/10 px-3 py-1 text-xs font-medium text-status-yellow">
+<span class="w-2 h-2 mr-2 rounded-full bg-status-yellow"></span>
+                       Em Andamento
+                     </span>
+</td>
+<td class="px-6 py-4"><a class="font-medium text-primary hover:underline" href="#">Ver Detalhes</a></td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Almoxarife</td>
+<td class="px-6 py-4">Ergonômico</td>
+<td class="px-6 py-4">NR-17</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-status-red/10 px-3 py-1 text-xs font-medium text-status-red">
+<span class="w-2 h-2 mr-2 rounded-full bg-status-red"></span>
+                       Não Conforme
+                     </span>
+</td>
+<td class="px-6 py-4"><a class="font-medium text-primary hover:underline" href="#">Ver Detalhes</a></td>
+</tr>
+<tr class="bg-white dark:bg-gray-800">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Trabalhador em Altura</td>
+<td class="px-6 py-4">Queda</td>
+<td class="px-6 py-4">NR-35</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-status-green/10 px-3 py-1 text-xs font-medium text-status-green">
+<span class="w-2 h-2 mr-2 rounded-full bg-status-green"></span>
+                       Conforme
+                     </span>
+</td>
+<td class="px-6 py-4"><a class="font-medium text-primary hover:underline" href="#">Ver Detalhes</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

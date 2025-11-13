@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Solicitar Exame Ocupacional</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                        "text-light": "#333333",
+                        "text-dark": "#e5e7eb",
+                        "border-light": "#e0e0e0",
+                        "border-dark": "#374151"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+
+        /* Custom styles for radio buttons to change appearance on check */
+        input[type="radio"]:checked+label {
+            background-color: #197fe6;
+            color: white;
+            border-color: #197fe6;
+        }
+
+        input[type="radio"]:checked+label p {
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+<div class="w-full max-w-4xl space-y-8">
+<!-- Page Heading -->
+<div class="flex flex-col gap-2 text-center">
+<h1 class="text-4xl font-black tracking-tighter text-[#0e141b] dark:text-white">Solicitar Exame Ocupacional</h1>
+<p class="text-base font-normal text-[#4e7397] dark:text-gray-400">Preencha os campos abaixo para registrar a solicitação de um novo exame.</p>
+</div>
+<!-- Main Form Card -->
+<div class="w-full rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-gray-800/50 shadow-sm">
+<div class="flex flex-col space-y-8 p-6 sm:p-8">
+<!-- Section 1: Tipo de Exame -->
+<div class="flex flex-col gap-4">
+<h3 class="text-lg font-bold tracking-tight text-[#0e141b] dark:text-white">1. Selecione o tipo de exame</h3>
+<div class="flex flex-wrap gap-3">
+<input checked="" class="hidden" id="admissional" name="exam_type" type="radio"/>
+<label class="flex h-10 cursor-pointer items-center justify-center gap-x-2 rounded-lg border border-border-light bg-[#e7edf3]/50 dark:border-border-dark dark:bg-gray-700/50 px-4 py-2 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700" for="admissional">
+<p class="text-sm font-medium text-[#0e141b] dark:text-gray-200">Admissional</p>
+</label>
+<input class="hidden" id="demissional" name="exam_type" type="radio"/>
+<label class="flex h-10 cursor-pointer items-center justify-center gap-x-2 rounded-lg border border-border-light bg-[#e7edf3]/50 dark:border-border-dark dark:bg-gray-700/50 px-4 py-2 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700" for="demissional">
+<p class="text-sm font-medium text-[#0e141b] dark:text-gray-200">Demissional</p>
+</label>
+<input class="hidden" id="retorno" name="exam_type" type="radio"/>
+<label class="flex h-10 cursor-pointer items-center justify-center gap-x-2 rounded-lg border border-border-light bg-[#e7edf3]/50 dark:border-border-dark dark:bg-gray-700/50 px-4 py-2 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700" for="retorno">
+<p class="text-sm font-medium text-[#0e141b] dark:text-gray-200">Retorno ao Trabalho</p>
+</label>
+<input class="hidden" id="periodico" name="exam_type" type="radio"/>
+<label class="flex h-10 cursor-pointer items-center justify-center gap-x-2 rounded-lg border border-border-light bg-[#e7edf3]/50 dark:border-border-dark dark:bg-gray-700/50 px-4 py-2 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700" for="periodico">
+<p class="text-sm font-medium text-[#0e141b] dark:text-gray-200">Periódico</p>
+</label>
+<input class="hidden" id="risco" name="exam_type" type="radio"/>
+<label class="flex h-10 cursor-pointer items-center justify-center gap-x-2 rounded-lg border border-border-light bg-[#e7edf3]/50 dark:border-border-dark dark:bg-gray-700/50 px-4 py-2 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700" for="risco">
+<p class="text-sm font-medium text-[#0e141b] dark:text-gray-200">Mudança de Risco</p>
+</label>
+</div>
+</div>
+<!-- Section 2: Colaborador -->
+<div class="flex flex-col gap-4">
+<h3 class="text-lg font-bold tracking-tight text-[#0e141b] dark:text-white">2. Busque e selecione o colaborador</h3>
+<label class="flex h-12 w-full flex-col">
+<div class="flex h-full w-full flex-1 items-stretch rounded-lg">
+<div class="flex items-center justify-center rounded-l-lg border border-r-0 border-border-light bg-[#e7edf3]/50 pl-4 text-[#4e7397] dark:border-border-dark dark:bg-gray-700/50 dark:text-gray-400">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input h-full w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg border border-l-0 border-border-light bg-[#e7edf3]/50 px-4 text-base font-normal leading-normal text-[#0e141b] placeholder:text-[#4e7397] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:border-border-dark dark:bg-gray-700/50 dark:text-gray-200 dark:placeholder:text-gray-400 dark:focus:border-primary" placeholder="Digite o nome ou matrícula do colaborador" value=""/>
+</div>
+</label>
+<!-- Selected Employee Display Card -->
+<div class="rounded-lg border border-dashed border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-6">
+<div class="flex items-center gap-4">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
+<span class="material-symbols-outlined text-primary text-3xl">person</span>
+</div>
+<div class="flex flex-col">
+<p class="font-bold text-[#0e141b] dark:text-white">Maria da Silva</p>
+<p class="text-sm text-[#4e7397] dark:text-gray-400">Cargo: Analista Financeiro | Setor: Contabilidade</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Data -->
+<div class="flex flex-col gap-4">
+<h3 class="text-lg font-bold tracking-tight text-[#0e141b] dark:text-white">3. Defina a data da solicitação</h3>
+<div class="relative max-w-sm">
+<label class="flex h-12 w-full flex-col">
+<div class="flex h-full w-full flex-1 items-stretch rounded-lg">
+<div class="flex items-center justify-center rounded-l-lg border border-r-0 border-border-light bg-[#e7edf3]/50 pl-4 text-[#4e7397] dark:border-border-dark dark:bg-gray-700/50 dark:text-gray-400">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<input class="form-input h-full w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg border border-l-0 border-border-light bg-[#e7edf3]/50 px-4 text-base font-normal leading-normal text-[#0e141b] placeholder:text-[#4e7397] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:border-border-dark dark:bg-gray-700/50 dark:text-gray-200 dark:placeholder:text-gray-400 dark:focus:border-primary" type="date" value="2023-10-27"/>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="flex flex-col items-center justify-end gap-4 border-t border-border-light bg-gray-50 p-6 dark:border-border-dark dark:bg-gray-800/20 sm:flex-row rounded-b-xl">
+<button class="h-11 w-full rounded-lg px-6 py-2.5 text-center text-sm font-semibold text-[#4e7397] transition-colors hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700 sm:w-auto">Limpar</button>
+<button class="flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto">
+<span>Registrar Solicitação</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

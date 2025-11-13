@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Employee Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                        "success": "#2e7d32",
+                        "danger": "#d32f2f",
+                        "text-light-primary": "#0e141b",
+                        "text-light-secondary": "#4e7397",
+                        "text-dark-primary": "#f6f7f8",
+                        "text-dark-secondary": "#a0aec0",
+                        "border-light": "#d0dbe7",
+                        "border-dark": "#2d3748",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a202c",
+                        "subtle-light": "#e7edf3",
+                        "subtle-dark": "#2d3748",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="flex h-screen">
+<!-- SideNavBar -->
+<aside class="flex w-64 flex-col border-r border-border-light bg-surface-light dark:border-border-dark dark:bg-surface-dark">
+<div class="flex h-16 items-center gap-3 border-b border-border-light px-6 dark:border-border-dark">
+<div class="text-primary size-7">
+<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1.06 13.5L6.4 11.96l1.41-1.41 3.13 3.13 6.19-6.18 1.41 1.41-7.6 7.59z"></path>
+</svg>
+</div>
+<h2 class="text-text-light-primary dark:text-text-dark-primary text-lg font-bold tracking-tight">Segurança Total</h2>
+</div>
+<div class="flex flex-1 flex-col justify-between p-4">
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light-secondary hover:bg-subtle-light dark:text-text-dark-secondary dark:hover:bg-subtle-dark" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-primary" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">group</span>
+<p class="text-sm font-bold">Colaboradores</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light-secondary hover:bg-subtle-light dark:text-text-dark-secondary dark:hover:bg-subtle-dark" href="#">
+<span class="material-symbols-outlined text-xl">monitor_heart</span>
+<p class="text-sm font-medium">Exames</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light-secondary hover:bg-subtle-light dark:text-text-dark-secondary dark:hover:bg-subtle-dark" href="#">
+<span class="material-symbols-outlined text-xl">summarize</span>
+<p class="text-sm font-medium">Relatórios</p>
+</a>
+</div>
+<div class="flex flex-col">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light-secondary hover:bg-subtle-light dark:text-text-dark-secondary dark:hover:bg-subtle-dark" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<p class="text-sm font-medium">Configurações</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light-secondary hover:bg-subtle-light dark:text-text-dark-secondary dark:hover:bg-subtle-dark" href="#">
+<span class="material-symbols-outlined text-xl">logout</span>
+<p class="text-sm font-medium">Sair</p>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-10 flex h-16 items-center justify-between border-b border-border-light bg-surface-light px-6 dark:border-border-dark dark:bg-surface-dark">
+<h1 class="text-xl font-bold text-text-light-primary dark:text-text-dark-primary">Gerenciar Colaborador</h1>
+<div class="flex items-center gap-4">
+<label class="relative hidden sm:block">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-text-light-secondary dark:text-text-dark-secondary">search</span>
+<input class="form-input h-10 w-full min-w-[200px] max-w-xs rounded-lg border-none bg-subtle-light pl-10 text-sm text-text-light-primary placeholder:text-text-light-secondary focus:outline-none focus:ring-2 focus:ring-primary/50 dark:bg-subtle-dark dark:text-text-dark-primary dark:placeholder:text-text-dark-secondary" placeholder="Buscar colaborador..."/>
+</label>
+<button class="relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg bg-subtle-light text-text-light-secondary hover:bg-primary/20 hover:text-primary dark:bg-subtle-dark dark:text-text-dark-secondary dark:hover:bg-primary/20">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-danger"></span>
+</button>
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover bg-center" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB9i7QEyiM1FE8UEBLiXTlWQvCeA9R_rXMqHkgLDFX_tApEcmFJvK3NHzEQ2UXoJyspi4FL40sCj3qt6u7T-4W-Ii1_kud7PV1Ds1d5jKZXSpEKT2ou5ZYnMXb630U3Mm2Ex1d_ZT5rw5zN6v27J21WVXtUZkSsxvXU_d6QuGIrzGMh0LeF3x0Gvyd2mUzhkA-zXPAdtWYpdICP_opVkMH4K_rASdxW_IeAh6iYdvTnG-NNzilKG68WN2jxx0IznjcneOZEsIg1IyE");'></div>
+<div class="hidden text-right lg:block">
+<p class="text-sm font-semibold text-text-light-primary dark:text-text-dark-primary">Admin</p>
+<p class="text-xs text-text-light-secondary dark:text-text-dark-secondary">admin@empresa.com</p>
+</div>
+</div>
+</div>
+</header>
+<div class="p-6 @container">
+<!-- ProfileHeader -->
+<div class="flex w-full flex-col gap-4 rounded-xl bg-surface-light p-6 dark:bg-surface-dark @[520px]:flex-row @[520px]:items-center @[520px]:justify-between">
+<div class="flex items-center gap-4">
+<div class="h-24 w-24 min-w-[96px] rounded-full bg-cover bg-center" data-alt="Profile picture of Nome do Colaborador" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDuklbCOlWFukOK8ufyx0SY-efe-OZASp8FT0woQiYenePe_-gatENCNIHlBKQVSTv8hdVxdA3BdD51AKM9JwoCG9L2Kl49M6WEf50LQwglBiyqbAFnegLzcGRA41EyZqF2UsNdQNvX3sSj2SFMTrzkzzcI8A_On8kyFsTi5NSXCQaPZLCiMWDk5S6bw9UKq3urZbZdXjIR23Osf28d1NtvB5DSFS_RuEE9yC9xE7UeQWEToDVE2K2pYcIEh6H79fqJJvl1wMLTWRw");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-[22px] font-bold leading-tight tracking-tight text-text-light-primary dark:text-text-dark-primary">Nome do Colaborador</p>
+<div class="mt-1 inline-flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-success"></span>
+<p class="text-base font-normal leading-normal text-success">Ativo</p>
+</div>
+</div>
+</div>
+<div class="flex w-full flex-col gap-3 @[480px]:w-auto @[480px]:flex-row">
+<button class="flex h-10 max-w-[480px] flex-1 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-subtle-light px-4 text-sm font-bold text-text-light-primary hover:bg-primary/20 dark:bg-subtle-dark dark:text-text-dark-primary dark:hover:bg-primary/20 @[480px]:flex-auto">
+<span class="material-symbols-outlined text-lg">save</span>
+<span class="truncate">Salvar Alterações</span>
+</button>
+<button class="flex h-10 max-w-[480px] flex-1 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold text-white hover:bg-primary/90 @[480px]:flex-auto">
+<span class="material-symbols-outlined text-lg">print</span>
+<span class="truncate">Imprimir Ficha</span>
+</button>
+</div>
+</div>
+<!-- Tabs & Content -->
+<div class="mt-6">
+<!-- Tabs -->
+<div class="border-b border-border-light dark:border-border-dark">
+<div class="flex gap-8 px-2">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary pb-[13px] pt-2 text-primary" href="#">
+<p class="text-sm font-bold tracking-[0.015em]">Dados Pessoais</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent pb-[13px] pt-2 text-text-light-secondary hover:border-primary/50 hover:text-text-light-primary dark:text-text-dark-secondary dark:hover:text-text-dark-primary" href="#">
+<p class="text-sm font-bold tracking-[0.015em]">Dados Profissionais</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent pb-[13px] pt-2 text-text-light-secondary hover:border-primary/50 hover:text-text-light-primary dark:text-text-dark-secondary dark:hover:text-text-dark-primary" href="#">
+<p class="text-sm font-bold tracking-[0.015em]">Histórico de Exames</p>
+</a>
+</div>
+</div>
+<!-- Form Content -->
+<div class="mt-6 rounded-xl bg-surface-light p-6 dark:bg-surface-dark">
+<!-- SectionHeader -->
+<div class="flex items-center justify-between border-b border-border-light pb-4 dark:border-border-dark">
+<h2 class="text-xl font-bold leading-tight tracking-tight text-text-light-primary dark:text-text-dark-primary">Dados Pessoais</h2>
+<button class="flex h-9 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-danger px-4 text-sm font-bold text-white hover:bg-danger/90">
+<span class="material-symbols-outlined text-base">person_off</span>
+<span class="truncate">Desativar Colaborador</span>
+</button>
+</div>
+<!-- Form Grid -->
+<div class="grid grid-cols-1 gap-x-6 gap-y-5 pt-6 md:grid-cols-2 lg:grid-cols-3">
+<div class="lg:col-span-2">
+<label class="mb-1.5 block text-sm font-medium text-text-light-primary dark:text-text-dark-primary" for="full-name">Nome Completo</label>
+<input class="form-input w-full rounded-lg border-border-light bg-background-light text-text-light-primary focus:border-primary focus:ring-primary/50 dark:border-border-dark dark:bg-background-dark dark:text-text-dark-primary" id="full-name" type="text" value="Nome Completo do Colaborador"/>
+</div>
+<div>
+<label class="mb-1.5 block text-sm font-medium text-text-light-primary dark:text-text-dark-primary" for="birth-date">Data de Nascimento</label>
+<input class="form-input w-full rounded-lg border-border-light bg-background-light text-text-light-primary focus:border-primary focus:ring-primary/50 dark:border-border-dark dark:bg-background-dark dark:text-text-dark-primary" id="birth-date" type="date" value="1990-05-15"/>
+</div>
+<div>
+<label class="mb-1.5 block text-sm font-medium text-text-light-primary dark:text-text-dark-primary" for="cpf">CPF</label>
+<input class="form-input w-full rounded-lg border-border-light bg-background-light text-text-light-primary focus:border-primary focus:ring-primary/50 dark:border-border-dark dark:bg-background-dark dark:text-text-dark-primary" id="cpf" placeholder="000.000.000-00" type="text" value="123.456.789-00"/>
+</div>
+<div>
+<label class="mb-1.5 block text-sm font-medium text-text-light-primary dark:text-text-dark-primary" for="rg">RG</label>
+<input class="form-input w-full rounded-lg border-border-light bg-background-light text-text-light-primary focus:border-primary focus:ring-primary/50 dark:border-border-dark dark:bg-background-dark dark:text-text-dark-primary" id="rg" placeholder="00.000.000-0" type="text" value="12.345.678-9"/>
+</div>
+<div class="lg:col-span-3">
+<h3 class="mt-4 border-b border-border-light pb-3 text-lg font-bold text-text-light-primary dark:border-border-dark dark:text-text-dark-primary">Contato</h3>
+</div>
+<div>
+<label class="mb-1.5 block text-sm font-medium text-text-light-primary dark:text-text-dark-primary" for="email">Email</label>
+<input class="form-input w-full rounded-lg border-border-light bg-background-light text-text-light-primary focus:border-primary focus:ring-primary/50 dark:border-border-dark dark:bg-background-dark dark:text-text-dark-primary" id="email" type="email" value="colaborador@email.com"/>
+</div>
+<div>
+<label class="mb-1.5 block text-sm font-medium text-text-light-primary dark:text-text-dark-primary" for="phone">Telefone Celular</label>
+<input class="form-input w-full rounded-lg border-border-light bg-background-light text-text-light-primary focus:border-primary focus:ring-primary/50 dark:border-border-dark dark:bg-background-dark dark:text-text-dark-primary" id="phone" placeholder="(00) 00000-0000" type="tel" value="(11) 98765-4321"/>
+</div>
+<div class="lg:col-span-3">
+<h3 class="mt-4 border-b border-border-light pb-3 text-lg font-bold text-text-light-primary dark:border-border-dark dark:text-text-dark-primary">Endereço</h3>
+</div>
+<div class="lg:col-span-2">
+<label class="mb-1.5 block text-sm font-medium text-text-light-primary dark:text-text-dark-primary" for="address">Logradouro</label>
+<input class="form-input w-full rounded-lg border-border-light bg-background-light text-text-light-primary focus:border-primary focus:ring-primary/50 dark:border-border-dark dark:bg-background-dark dark:text-text-dark-primary" id="address" type="text" value="Rua das Flores"/>
+</div>
+<div>
+<label class="mb-1.5 block text-sm font-medium text-text-light-primary dark:text-text-dark-primary" for="number">Número</label>
+<input class="form-input w-full rounded-lg border-border-light bg-background-light text-text-light-primary focus:border-primary focus:ring-primary/50 dark:border-border-dark dark:bg-background-dark dark:text-text-dark-primary" id="number" type="text" value="123"/>
+</div>
+<div>
+<label class="mb-1.5 block text-sm font-medium text-text-light-primary dark:text-text-dark-primary" for="city">Cidade</label>
+<input class="form-input w-full rounded-lg border-border-light bg-background-light text-text-light-primary focus:border-primary focus:ring-primary/50 dark:border-border-dark dark:bg-background-dark dark:text-text-dark-primary" id="city" type="text" value="São Paulo"/>
+</div>
+<div>
+<label class="mb-1.5 block text-sm font-medium text-text-light-primary dark:text-text-dark-primary" for="state">Estado</label>
+<select class="form-select w-full rounded-lg border-border-light bg-background-light text-text-light-primary focus:border-primary focus:ring-primary/50 dark:border-border-dark dark:bg-background-dark dark:text-text-dark-primary" id="state">
+<option>SP</option>
+<option>RJ</option>
+<option>MG</option>
+</select>
+</div>
+<div>
+<label class="mb-1.5 block text-sm font-medium text-text-light-primary dark:text-text-dark-primary" for="zip">CEP</label>
+<input class="form-input w-full rounded-lg border-border-light bg-background-light text-text-light-primary focus:border-primary focus:ring-primary/50 dark:border-border-dark dark:bg-background-dark dark:text-text-dark-primary" id="zip" placeholder="00000-000" type="text" value="01234-567"/>
+</div>
+</div>
+<div class="mt-8 flex justify-end gap-3 border-t border-border-light pt-6 dark:border-border-dark">
+<button class="flex h-10 max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-subtle-light px-6 text-sm font-bold text-text-light-primary hover:bg-primary/20 dark:bg-subtle-dark dark:text-text-dark-primary dark:hover:bg-primary/20">
+<span class="truncate">Cancelar</span>
+</button>
+<button class="flex h-10 max-w-[480px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-primary px-6 text-sm font-bold text-white hover:bg-primary/90">
+<span class="material-symbols-outlined text-lg">save</span>
+<span class="truncate">Salvar Alterações</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
